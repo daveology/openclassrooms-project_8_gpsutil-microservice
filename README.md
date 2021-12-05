@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<img src="src/main/resources/static/logo.png" alt="logo" width="116" height="120" />
+    <img src="src/main/resources/static/logo.png" alt="logo" width="116" height="120" />
     <h3 align="center">GpsUtil <i>(TourGuide Service)</i></h3>
     <p align="center">
         Changez votre magnière de voyager !
@@ -39,7 +39,9 @@ GpsUtil is a service providing geolocation features in a microservice architectu
 
 * [TourGuide Project Repository](https://github.com/s2680854/openclassrooms_8th-project_tourguide-microservice)
 
-<img src="src/main/resources/static/header.png" alt="header" />
+<div align="center">
+    <img src="src/main/resources/static/header.png" alt="header" />
+</div>
 
 <!-- ACKNOWLEDGEMENTS -->
 ## 📝 Acknowledgements
