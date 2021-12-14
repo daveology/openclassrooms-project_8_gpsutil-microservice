@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.6.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'jacoco'
 }
 
 group = 'com.tourguide'
@@ -33,3 +34,4 @@ test {
 configurations.implementation {
     exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
 }
+
