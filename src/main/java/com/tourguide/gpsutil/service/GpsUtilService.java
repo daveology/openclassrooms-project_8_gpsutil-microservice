@@ -6,7 +6,6 @@ import gpsUtil.location.VisitedLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.UUID;
@@ -24,10 +23,17 @@ public class GpsUtilService {
         return gpsUtil.getAttractions();
     }
 
-    public VisitedLocation getUserLocation (@RequestParam UUID userUuid) {
+    public VisitedLocation getUserLocation(UUID userUuid) {
 
         logger.debug("User's location received!");
 
-        return gpsUtil.getUserLocation(userUuid);
+        VisitedLocation visitedLocation = null;
+        try {
+            visitedLocation = gpsUtil.getUserLocation(UUID.randomUUID());
+        } catch (RuntimeException r) {
+            new RuntimeException("User's location not obtained");
+        }
+
+        return visitedLocation;
     }
 }
