@@ -1,8 +1,10 @@
 package com.tourguide.gpsutil.controller;
 
+import com.tourguide.gpsutil.service.GpsUtilService;
 import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,22 +17,18 @@ import java.util.UUID;
 @RestController
 public class GpsUtilController {
 
-    private Logger logger = LogManager.getLogger(GpsUtilController.class);
-    GpsUtil gpsUtil = new GpsUtil();
+    @Autowired
+    GpsUtilService gpsUtilService;
 
     @GetMapping(value="/attractions")
     public List<Attraction> getAttractions() {
 
-        logger.debug("Attractions received!");
-
-        return gpsUtil.getAttractions();
+        return gpsUtilService.getAttractions();
     }
 
     @GetMapping(value="/userLocation")
     public VisitedLocation getUserLocation (@RequestParam UUID userUuid) {
 
-        logger.debug("User's location received!");
-
-        return gpsUtil.getUserLocation(userUuid);
+        return gpsUtilService.getUserLocation(userUuid);
     }
 }
