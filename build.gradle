@@ -2,11 +2,10 @@ plugins {
     id 'org.springframework.boot' version '2.6.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
-    id 'jacoco'
 }
 
 group = 'com.tourguide'
-version = '0.0.3-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -29,35 +28,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
-3
+}
 
 configurations.implementation {
     exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-}
-
-jacoco {
-    toolVersion = "0.8.7"
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        csv.enabled false
-        html.destination file("${buildDir}/jacocoHtml")
-    }
-}
-
-test.finalizedBy jacocoTestReport
-check.dependsOn jacocoTestCoverageVerification
-
-jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            limit {
-                counter = 'LINE'
-                value = 'COVEREDRATIO'
-                minimum = 0.5
-            }
-        }
-    }
 }
