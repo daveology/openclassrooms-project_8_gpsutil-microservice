@@ -1,5 +1,6 @@
 package com.tourguide.gpsutil.service;
 
+import com.tourguide.gpsutil.exception.GetUserLocationException;
 import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
@@ -18,22 +19,18 @@ public class GpsUtilService {
 
     public List<Attraction> getAttractions() {
 
-        logger.debug("Attractions received!");
+        logger.debug("(i) Attractions received!");
 
         return gpsUtil.getAttractions();
     }
 
     public VisitedLocation getUserLocation(UUID userUuid) {
 
-        logger.debug("User's location received!");
+        logger.debug("(i) User's location received!");
 
-        VisitedLocation visitedLocation = null;
-        try {
-            visitedLocation = gpsUtil.getUserLocation(UUID.randomUUID());
-        } catch (RuntimeException r) {
-            new RuntimeException("User's location not obtained");
-        }
+        VisitedLocation visitedLocation = gpsUtil.getUserLocation(userUuid);
 
         return visitedLocation;
     }
 }
+
