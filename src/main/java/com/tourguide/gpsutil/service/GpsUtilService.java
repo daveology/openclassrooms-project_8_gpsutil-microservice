@@ -1,6 +1,5 @@
 package com.tourguide.gpsutil.service;
 
-import com.tourguide.gpsutil.exception.GetUserLocationException;
 import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
