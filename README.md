@@ -1,3 +1,5 @@
+![version](https://img.shields.io/badge/GpsUtil-v1.2.0-purple) ![version](https://img.shields.io/badge/Java-1.8-red) ![version](https://img.shields.io/badge/Spring_Boot-2.5.1-green) ![version](https://img.shields.io/badge/Docker_Image-passing-blue)
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
